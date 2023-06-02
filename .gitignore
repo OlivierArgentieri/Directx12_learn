@@ -1,0 +1,7 @@
+# IDE
+.vs
+
+# Build
+[Dd]ebug
+x64
+.pdb
