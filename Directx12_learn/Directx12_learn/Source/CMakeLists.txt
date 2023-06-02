@@ -1,0 +1,27 @@
+# Settings
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/Include/DX12/shared)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/Include/DX12/um)
+INCLUDE_DIRECTORIES(${CMAKE_SOURCE_DIR}/Directx12_learn/Header)
+
+# Files
+FILE(GLOB_RECURSE ENGINE_SOURCES *.cpp *.c)
+FILE(GLOB_RECURSE ENGINE_HEADERS *.h *.hpp *.inl)
+
+# dx12 include folder
+FILE(GLOB DX12 ${CMAKE_SOURCE_DIR}/Include/DX12/shared/*.*)
+FILE(GLOB DX12 ${CMAKE_SOURCE_DIR}/Include/DX12/um/*.*)
+
+ADD_EXECUTABLE(Directx12_learn
+	${ENGINE_SOURCES}
+	${ENGINE_HEADERS}
+	${DX12}
+)
+
+TARGET_LINK_LIBRARIES(Directx12_learn
+	d3d12
+	dxgi
+	d3dcompiler
+)
+
+# Add filters
+SOURCE_GROUP(Include\\FILES ${DX12})
