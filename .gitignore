@@ -3,5 +3,8 @@
 
 # Build
 [Dd]ebug
+[Bb]uild
+[Bb]inaries
 x64
 .pdb
+.sln
